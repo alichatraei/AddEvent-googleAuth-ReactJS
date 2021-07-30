@@ -3,25 +3,10 @@ import {
     AppBar,
     Toolbar, IconButton, Typography,
 } from '@material-ui/core';
+import { GoogleLogin } from 'react-google-login';
 import { PersonOutlineOutlined } from '@material-ui/icons'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            direction: theme.direction,
-            backgroundColor: "#ffffff",
-            flexGrow: 1,
-            color: '#000000',
-            fontFamily: theme.typography.fontFamily
-        },
-        menuButton: {
-            marginRight: theme.spacing(2),
-        },
-        title: {
-            flexGrow: 1,
-        },
-    }),
-);
+import useStyles from './HeaderLayout.styles'
+const clientId = '';
 const HeaderLayout = () => {
     const classes = useStyles();
     return (
@@ -39,7 +24,18 @@ const HeaderLayout = () => {
                             aria-haspopup="true"
                             color="inherit"
                         >
-                            <PersonOutlineOutlined />
+                            <GoogleLogin
+                                clientId={clientId}
+                                render={renderProps => {
+                                    console.log(renderProps)
+                                    return <PersonOutlineOutlined
+                                        onClick={renderProps.onClick}
+                                        disabled={renderProps.disabled} />
+                                }}
+                                buttonText="Sign In"
+                                cookiePolicy={'single_host_origin'}
+                                isSignedIn={true} />
+
                         </IconButton>
 
                     </div>

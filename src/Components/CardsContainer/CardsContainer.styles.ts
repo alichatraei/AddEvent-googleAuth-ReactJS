@@ -9,11 +9,9 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(2),
             textAlign: 'center',
             color: theme.palette.text.secondary,
-            // fontFamily: theme.typography.fontFamily
         },
         container: {
             marginTop: '3rem',
-            // direction: theme.direction
         }
     }),
 );
