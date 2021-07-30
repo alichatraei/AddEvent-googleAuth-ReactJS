@@ -1,2 +1,3 @@
-import CardsContainer from './CardsContainer/CardsContainer'
-export { CardsContainer }
+import CardsContainer from './CardsContainer/CardsContainer';
+import GoogleAuthButton from './GoogleAuthButton/GoogleAuthButton';
+export { CardsContainer, GoogleAuthButton }

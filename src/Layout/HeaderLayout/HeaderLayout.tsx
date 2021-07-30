@@ -3,8 +3,7 @@ import {
     AppBar,
     Toolbar, IconButton, Typography,
 } from '@material-ui/core';
-import { GoogleLogin } from 'react-google-login';
-import { PersonOutlineOutlined } from '@material-ui/icons'
+import { GoogleAuthButton } from '../../Components';
 import useStyles from './HeaderLayout.styles'
 const HeaderLayout = () => {
     const classes = useStyles();
@@ -23,7 +22,7 @@ const HeaderLayout = () => {
                             aria-haspopup="true"
                             color="inherit"
                         >
-
+                            <GoogleAuthButton />
                         </IconButton>
 
                     </div>
