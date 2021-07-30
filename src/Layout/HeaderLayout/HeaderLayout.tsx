@@ -33,14 +33,15 @@ const HeaderLayout = () => {
                         >
                             <GoogleAuthButton />
                         </IconButton>
-                        {history.location.pathname === '/dashboard' ? <IconButton
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            color="inherit"
-                        >
-                            <AddCircleOutlineOutlinedIcon onClick={handleOpenModalBox} />
-                        </IconButton> : false}
+                        {history.location.pathname === '/dashboard' ?
+                            <IconButton
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                color="inherit"
+                            >
+                                <AddCircleOutlineOutlinedIcon onClick={handleOpenModalBox} />
+                            </IconButton> : false}
 
                     </div>
                 </Toolbar>

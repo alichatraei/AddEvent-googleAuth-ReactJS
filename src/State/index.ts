@@ -1,3 +1,3 @@
 import rootReducer from "./_Reducers";
-import _event from "./_ActionCreators/_EventCreator";
-export { rootReducer, _event }
+import * as EventCreator from './_ActionCreators/_EventCreator'
+export { rootReducer, EventCreator }

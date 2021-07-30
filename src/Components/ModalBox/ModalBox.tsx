@@ -6,7 +6,10 @@ import {
     TextField,
     Grid, Button
 } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import useStyles from './ModalBox.styles';
+import { EventCreator } from '../../State'
 interface IProp {
     openModalBox: boolean;
     handleCloseModalBox: () => void
@@ -15,6 +18,16 @@ const ModalBox: React.FC<IProp> = ({ openModalBox, handleCloseModalBox }) => {
     const classes = useStyles();
     const [eventTextField, setEventTextField] = useState("");
     const [eventDateField, setEventDateField] = useState("");
+    const dispatch = useDispatch()
+    const addEvent = bindActionCreators(EventCreator, dispatch);
+    const handleClick = () => {
+        addEvent({
+            action: 'ADD_EVENT', payload: {
+                eventName: eventTextField,
+                eventDate: eventDateField
+            }
+        })
+    }
     return (
         <>
             <Modal
@@ -60,7 +73,8 @@ const ModalBox: React.FC<IProp> = ({ openModalBox, handleCloseModalBox }) => {
                         </Grid>
                         <Grid container className={classes.gridContainer} spacing={3}>
                             <Grid item xs={12}>
-                                <Button variant="contained" color="primary">
+                                <Button variant="contained" color="primary"
+                                    onClick={handleClick}>
                                     ثبت
                                 </Button>
                             </Grid>
