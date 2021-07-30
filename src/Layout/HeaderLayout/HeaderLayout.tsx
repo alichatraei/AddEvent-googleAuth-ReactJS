@@ -14,7 +14,6 @@ const HeaderLayout = () => {
                     <Typography variant="h6" className={classes.title}>
                         فرانش
                     </Typography>
-
                     <div>
                         <IconButton
                             aria-label="account of current user"
@@ -24,7 +23,6 @@ const HeaderLayout = () => {
                         >
                             <GoogleAuthButton />
                         </IconButton>
-
                     </div>
 
                 </Toolbar>
