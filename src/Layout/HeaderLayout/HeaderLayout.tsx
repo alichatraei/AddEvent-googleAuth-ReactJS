@@ -3,6 +3,7 @@ import {
     AppBar,
     Toolbar, IconButton, Typography,
 } from '@material-ui/core';
+import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import { GoogleAuthButton } from '../../Components';
 import useStyles from './HeaderLayout.styles'
 const HeaderLayout = () => {
@@ -23,8 +24,15 @@ const HeaderLayout = () => {
                         >
                             <GoogleAuthButton />
                         </IconButton>
+                        <IconButton
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            color="inherit"
+                        >
+                            <AddCircleOutlineOutlinedIcon />
+                        </IconButton>
                     </div>
-
                 </Toolbar>
             </AppBar>
         </header>
