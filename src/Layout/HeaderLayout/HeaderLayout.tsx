@@ -6,7 +6,6 @@ import {
 import { GoogleLogin } from 'react-google-login';
 import { PersonOutlineOutlined } from '@material-ui/icons'
 import useStyles from './HeaderLayout.styles'
-const clientId = '';
 const HeaderLayout = () => {
     const classes = useStyles();
     return (
@@ -24,17 +23,6 @@ const HeaderLayout = () => {
                             aria-haspopup="true"
                             color="inherit"
                         >
-                            <GoogleLogin
-                                clientId={clientId}
-                                render={renderProps => {
-                                    console.log(renderProps)
-                                    return <PersonOutlineOutlined
-                                        onClick={renderProps.onClick}
-                                        disabled={renderProps.disabled} />
-                                }}
-                                buttonText="Sign In"
-                                cookiePolicy={'single_host_origin'}
-                                isSignedIn={true} />
 
                         </IconButton>
 
