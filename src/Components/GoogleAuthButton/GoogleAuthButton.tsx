@@ -46,7 +46,7 @@ const GoogleAuthButton = () => {
                     )
                 }}
                 onSuccess={handleLogin}
-                buttonText="Sign In" />}
+            />}
 
         </div >
 

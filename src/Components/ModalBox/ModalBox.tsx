@@ -26,6 +26,8 @@ const ModalBox: React.FC<IProp> = ({ openModalBox, handleCloseModalBox }) => {
             date: eventDateField
         })
         handleCloseModalBox();
+        setEventTextField('')
+        setEventDateField('')
     }
     return (
         <>
