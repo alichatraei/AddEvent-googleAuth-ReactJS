@@ -10,7 +10,7 @@ const GoogleAuthButton = () => {
     const history = useHistory()
     const response = (res: GoogleLoginResponse | GoogleLoginResponseOffline) => {
         console.log({ ...res })
-        history.push('/welcome')
+        history.push('/dashboard')
     }
     return (
         <>
@@ -23,7 +23,6 @@ const GoogleAuthButton = () => {
                 }}
                 onSuccess={response}
                 buttonText="Sign In" />
-
         </>
     )
 }
