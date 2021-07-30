@@ -5,4 +5,4 @@ const addEvent = (amount: {}) => {
         dispatch({ type: _EventType.ADD_EVENT, payload: amount })
     }
 }
-export default addEvent
+export { addEvent }
