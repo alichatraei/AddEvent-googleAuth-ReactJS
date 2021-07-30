@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundColor: "#ffffff",
             flexGrow: 1,
             color: '#000000',
-            fontFamily: theme.typography.fontFamily
+            fontFamily: theme.typography.fontFamily,
         },
         menuButton: {
             marginRight: theme.spacing(2),

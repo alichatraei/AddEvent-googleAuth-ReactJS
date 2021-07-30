@@ -19,14 +19,13 @@ const ModalBox: React.FC<IProp> = ({ openModalBox, handleCloseModalBox }) => {
     const [eventTextField, setEventTextField] = useState("");
     const [eventDateField, setEventDateField] = useState("");
     const dispatch = useDispatch()
-    const addEvent = bindActionCreators(EventCreator, dispatch);
+    const { addEvent } = bindActionCreators(EventCreator, dispatch);
     const handleClick = () => {
         addEvent({
-            action: 'ADD_EVENT', payload: {
-                eventName: eventTextField,
-                eventDate: eventDateField
-            }
+            title: eventTextField,
+            date: eventDateField
         })
+        handleCloseModalBox();
     }
     return (
         <>
