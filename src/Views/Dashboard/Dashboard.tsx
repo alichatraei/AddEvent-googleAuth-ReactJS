@@ -2,19 +2,16 @@ import React from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import { Container, Grid, Paper } from '@material-ui/core'
+import useStyles from './Dashboard.styles'
 const Dashboard = () => {
+    const classes = useStyles()
     return (
         <main>
-            <Container>
-                <Grid container style={{
-                    width: "100%",
-                    height: '100%'
-                }}>
-                    <Paper elevation={3} style={{
-                        width: "100%",
-                        height: "100%"
-                    }} >
+            <Container className={classes.container}>
+                <Grid container className={classes.grid}>
+                    <Paper elevation={3} className={classes.paper}>
                         <FullCalendar
+                            aspectRatio={5 / 3}
                             buttonText={{ today: 'امروز' }}
                             plugins={[dayGridPlugin]}
                             initialView={"dayGridMonth"}
