@@ -1,3 +1,4 @@
 import CardsContainer from './CardsContainer/CardsContainer';
 import GoogleAuthButton from './GoogleAuthButton/GoogleAuthButton';
-export { CardsContainer, GoogleAuthButton }
+import ModalBox from './ModalBox/ModalBox';
+export { CardsContainer, GoogleAuthButton, ModalBox }

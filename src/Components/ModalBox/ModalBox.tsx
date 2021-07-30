@@ -1,24 +1,71 @@
-import React from 'react'
-import { Modal, Backdrop, Fade } from '@material-ui/core';
-const ModalBox = () => {
+import React, { useState } from 'react'
+import {
+    Modal, Backdrop,
+    Fade,
+    Typography,
+    TextField,
+    Grid, Button
+} from '@material-ui/core';
+import useStyles from './ModalBox.styles';
+interface IProp {
+    openModalBox: boolean;
+    handleCloseModalBox: () => void
+}
+const ModalBox: React.FC<IProp> = ({ openModalBox, handleCloseModalBox }) => {
+    const classes = useStyles();
+    const [eventTextField, setEventTextField] = useState("");
+    const [eventDateField, setEventDateField] = useState("");
     return (
         <>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 className={classes.modal}
-                open={open}
-                onClose={handleClose}
+                open={openModalBox}
+                onClose={handleCloseModalBox}
                 closeAfterTransition
                 BackdropComponent={Backdrop}
                 BackdropProps={{
                     timeout: 500,
                 }}
             >
-                <Fade in={open}>
+                <Fade in={openModalBox}>
                     <div className={classes.paper}>
-                        <h2 id="transition-modal-title">Transition modal</h2>
-                        <p id="transition-modal-description">react-transition-group animates me.</p>
+                        <Typography variant="h5" component="h5"
+                            id="headerTypography">یک رویداد را ثبت کنید</Typography>
+                        <Grid container className={classes.gridContainer} spacing={3}>
+                            <Grid item>
+                                <label htmlFor="outlined-basic">رویداد: </label>
+                            </Grid>
+                            <Grid item>
+                                <TextField id="outlined-basic"
+                                    placeholder="نام رویداد" type="text"
+                                    required
+                                    autoFocus
+                                    value={eventTextField}
+                                    onChange={e =>
+                                        setEventTextField(e.target.value)} />
+                            </Grid>
+                        </Grid>
+                        <Grid container className={classes.gridContainer} spacing={3}>
+                            <Grid item>
+                                <label htmlFor="datePicker">تاریخ: </label>
+                            </Grid>
+                            <Grid item>
+                                <TextField type="date"
+                                    className={classes.datePicker}
+                                    onChange={e =>
+                                        setEventDateField(e.target.value)} />
+                            </Grid>
+                        </Grid>
+                        <Grid container className={classes.gridContainer} spacing={3}>
+                            <Grid item xs={12}>
+                                <Button variant="contained" color="primary">
+                                    ثبت
+                                </Button>
+                            </Grid>
+
+                        </Grid>
                     </div>
                 </Fade>
             </Modal>
